@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title>data:数据对象练习</title>
+    <script src="js/vue.js">
+
+    </script>
+
+</head>
+
+<body>
+    <div id="app">
+        <!--文本直接写,对象用对象名.属性，数组用下标-->
+        {{msg}}
+        <h2>{{school.name}}{{school.mobile}}</h2>
+        <ul>
+            <li>{{campus[0]}}</li>
+            <li>{{campus[1]}}</li>
+            <li>{{campus[2]}}</li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                msg: "黑马",
+                school: { name: "黑马程序员", mobile: "12345" },
+                campus: ["北京", "上海", "广州", "深圳"]
+            }
+        })
+    </script>
+</body>
+
+</html>

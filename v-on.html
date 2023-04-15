@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <title>v-on练习</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!--v-on指令的作用是：为元素绑定事件，
+        事件名不需要写on，
+        指令可以简写为@，
+        绑定的方法定义在methods熟性中-->
+</head>
+
+<body>
+
+    <div id="app">
+        <input type="button" value="v-on绑定事件" v-on:click="dolt">
+        <input type="button" value="事件绑定" v-on:monseenter="dolt">
+        <!--v-on可以简写为@-->
+        <input type="button" value="v-on简写" @click="abc">
+        <input type="button" value="v-on简写双击事件" @dblclick="abc">
+        <h2 @click="changeFood">{{food}}</h2>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            methods: {
+                dolt: function () {
+                    alert("abc");
+                },
+                abc: function () {
+                    alert("123");
+                },
+                changeFood: function () {
+                    this.food += "好好吃！"
+                }
+
+            },
+            data: {
+                food: "西蓝花炒蛋"
+            }
+
+        })
+    </script>
+</body>
+
+</html>

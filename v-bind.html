@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>v-bind练习</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <img v-bind:src="imgUrl">
+        <img v-bind:title="imgTitle+'!!!!'">
+        <img v-bind:class="isactive?'active':''">
+       
+        <br>
+        <!--v-bind可以简写为：-->
+        <img :src="imgUrl" alt="">
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                imgUrl: "img/htl.jpg",
+                imgTitle: "黑马程序员",
+                isactive: false
+            }
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>图片切换案例</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <img :src="imgUrl">
+        <input type="button" value="切换" @click="change">
+
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                case: 1,
+                imgUrl1: "img/htl.jpg",
+                imgUrl2: "img/htl2.jpg",
+                imgUrl3: "img/xyy.jpg",
+                imgUrl: null
+            }, methods: {
+                change: function () {
+                    if (this.case < 3) {
+                        this.case += 1;
+                    } else {
+                        this.case = 1
+                    }
+                    if (this.case == 1) {
+                        this.imgUrl = this.imgUrl1;
+                    } else if (this.case == 2) {
+                        this.imgUrl = this.imgUrl2;
+                    } else if (this.case == 3) {
+                        this.imgUrl = this.imgUrl3
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

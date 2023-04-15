@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <title></title>
+    <script src="js/vue.js">
+
+    </script>
+</head>
+
+<body>
+
+
+    <div id="app">
+        <ul>
+            <li v-for="i in arr">
+                {{i.name}} {{i.age}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                arr: [{ name: "张三", age: 18 }, { name: "李四", age: 20 }]
+            }
+        })
+    </script>
+</body>
+
+</html>

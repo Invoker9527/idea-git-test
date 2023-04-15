@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title></title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <!--v-for指令的作用是：根据数据生成列表结构，
+    数组经常和v-for结合使用
+    语法是(item,index) in数据，index是数组下标
+    item和index可以结合其他指令一起使用
+    数组长度的更新会同步到页面上，是响应式的
+-->
+
+    <div id="app">
+        <ul>
+            <li v-for="i in arr">{{i}}</li>
+        </ul>
+    </div>
+    <div id="app2">
+        <ul>
+            <li v-for="(i,index) in arr2" :title="i">
+                {{index}}{{i}}
+            </li>
+        </ul>
+    </div>
+    <div id="app3">
+        <ul>信息
+            <li v-for="i in objArr">
+                姓名： {{i.name}} 年龄： {{i.age}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                arr: ['马云', '麻瓜疼', '卡哥', '鸡哥']
+            }
+        });
+        new Vue({
+            el: "#app2",
+            data: {
+                arr2: [1, 2, 3, 4, 5]
+            }
+        })
+        new Vue({
+            el: "#app3",
+            data: {
+                objArr: [
+                    { name: "张三", age: 18 }, { name: "李四", age: 19 }, { name: "王五", age: 20 }, { name: "赵六", age: 21 }
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>

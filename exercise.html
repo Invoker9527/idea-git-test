@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <title>综合练习</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="上一张" @click="indexReduce"><img :src="imgArr[index]"><input type="button" value="下一张"
+            @click="indexAdd">
+    </div>
+    <div id="app2">
+        <ul>
+            <li v-for="c in cities">
+                {{c}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="s in students" v-if="s.age>18">
+                {{s.name}}
+            </li>
+        </ul>
+        <img src="img/htl.jpg" v-show="1>2">
+        <a v-text="url"></a>
+        <a v-html="url"></a>
+
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                imgArr: ["img/htl.jpg", "img/htl2.jpg", "img/xyy.jpg"],
+                index: 0
+            }, methods: {
+                indexAdd: function () {
+                    if (this.index < this.imgArr.length - 1) {
+                        this.index++;
+                    } else {
+                        alert("别点啦，已经到第一张了")
+                    }
+                },
+                indexReduce: function () {
+                    if (this.index > 0) {
+                        this.index--;
+                    } else {
+                        alert("别点啦，已经到第一张了")
+                    }
+                }
+            }
+        });
+        new Vue({
+            el: "#app2",
+            data: {
+                cities: ["昆明", "楚雄", "大理", "丽江"],
+                students: [{ name: "小明", age: 18 }, { name: "小丽", age: "20" }],
+                url: "<a href='http://www.atguigu.com'>尚硅谷</a>"
+            }
+        })
+    </script>
+</body>
+
+</html>

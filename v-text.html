@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>
+        v-text练习
+    </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!--下面这个标签内容全部替换-->
+        <h2 v-text="msg">sas</h2>
+        <!--下面这个只替换{{}}里面的内容-->
+        <h2>{{info}}666</h2>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                msg: "黑马程序员",
+                info: "尚硅谷"
+
+            }
+
+
+        })
+    </script>
+
+</body>
+
+</html>

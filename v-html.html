@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>v-html练习</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <!--设置元素的innerHTML，内容中有HTML结构会被解析为标签-->
+        <p v-html="context"></p>
+        <!--无论内容是什么，只会解析为文本-->
+        <p v-text="context"></p>
+
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                context: "<a href='http://www.itheima.com'>黑马程序员</a>"
+            }
+        })
+    </script>
+</body>
+
+</html>

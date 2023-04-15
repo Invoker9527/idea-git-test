@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <title></title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="orig">
+        <div id="orig" v-show="!isshow"><input type="button" value="查看设备信息" @click="change">
+            <br>
+            <input type="button" value="添加设备信息" @keyup.enter="doit(1,2)">
+        </div>
+        <div id="app" v-show="isshow">
+            <ul>
+                <li v-for="i in arr">
+                    {{i.name}},{{i.age}}
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+    <script>
+
+        new Vue({
+            el: "#orig",
+            data: {
+                isshow: false,
+                arr: [{ name: "小明", age: 18 }, { name: "小丽", age: "20" }]
+            },
+            methods: {
+
+                change: function () {
+                    this.isshow = true;
+                },
+                doit:function(p1,p2){
+                    alert(p1+p2);
+                }
+            }
+
+
+        })
+
+
+
+    </script>
+</body>
+
+</html>

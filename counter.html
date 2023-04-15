@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title>计数器练习</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app"> <input type="button" value="-" @click="reduce">
+        <span id="counter">{{counter}}</span>
+        <input type="button" value="+" @click="add">
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                counter: 0
+            },
+            methods: {
+                add: function () {
+                    if (this.counter != 10) {
+                        this.counter += 1;
+                    } else {
+                        alert("不能再加啦")
+                    }
+
+                },
+                reduce: function () {
+                    if (this.counter != 0) {
+                        this.counter -= 1;
+                    } else {
+                        alert("不能再减啦")
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
